@@ -1,6 +1,4 @@
-const add = require('./add');
+require('./batman');
+require('./superman');
 
-console.log('hello from app.js');
-
-const sum = add(1, 5);
-console.log('🚀 ~ file: app.js:6 ~ sum:', sum);
+// batman and superman are being consoled under same variable 'superhero' but we are not getting any errors/conflicts  because the modules are scoped.
