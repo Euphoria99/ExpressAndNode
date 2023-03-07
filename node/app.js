@@ -1,4 +1,8 @@
-require('./batman');
-require('./superman');
+const superHero = require('./super-hero');
+console.log(superHero.getName());
+superHero.setName('super man');
+console.log(superHero.getName());
 
-// batman and superman are being consoled under same variable 'superhero' but we are not getting any errors/conflicts  because the modules are scoped.
+//
+const newSuperHero = require('./super-hero');
+console.log(newSuperHero.getName());
