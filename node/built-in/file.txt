@@ -1,0 +1,1 @@
+hello, this is text from txt file related to fs module!!!
