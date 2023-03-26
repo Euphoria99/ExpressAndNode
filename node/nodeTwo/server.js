@@ -1,12 +1,11 @@
 const http = require('node:http');
+const fs = require('node:fs');
 
 const server = http.createServer((req, res) => {
-    const superHero = {
-      firstname: 'Bruce',
-      lastName: 'Wayne',
-    };
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(superHero));
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  fs.createReadStream('./node/nodeTwo/index.html').pipe(res);
+  //   const html = fs.readFileSync('./node/nodeTwo/index.html', 'utf-8');
+  //   res.end(html);
 });
 
 const port = 3000;
