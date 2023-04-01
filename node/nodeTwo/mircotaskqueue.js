@@ -9,10 +9,6 @@
 // process.nextTick(() => console.log('this is  process.nextTick 1'));
 
 //exp3
-
-setTimeout(() => console.log('first timeout 1'), 0);
-setTimeout(() => console.log('second timeout 2'), 0);
-setTimeout(() => console.log('third timeout 3'), 0);
 process.nextTick(() => console.log('this is process.nextTick 1')); //1
 process.nextTick(() => {
   console.log('this is process.nextTick 2'); //2
@@ -31,3 +27,18 @@ Promise.resolve().then(() => {
   );
 });
 Promise.resolve().then(() => console.log('this is Promise.resolve 3')); //3
+
+//exp4
+setTimeout(() => console.log('first timeout 1'), 0); //1
+setTimeout(() => {
+  console.log('second timeout 2'); //2
+  process.nextTick(() => {
+    console.log('this is inner next tick inside setTimeout'); //3
+  });
+}, 0);
+setTimeout(() => console.log('third timeout 3'), 0); //4
+
+//exp5
+setTimeout(() => console.log('one '), 1000); 
+setTimeout(() => console.log('two '), 500); 
+setTimeout(() => console.log('three '), 0); 
