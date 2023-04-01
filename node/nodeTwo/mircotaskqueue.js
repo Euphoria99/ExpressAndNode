@@ -9,6 +9,10 @@
 // process.nextTick(() => console.log('this is  process.nextTick 1'));
 
 //exp3
+
+setTimeout(() => console.log('first timeout 1'), 0);
+setTimeout(() => console.log('second timeout 2'), 0);
+setTimeout(() => console.log('third timeout 3'), 0);
 process.nextTick(() => console.log('this is process.nextTick 1')); //1
 process.nextTick(() => {
   console.log('this is process.nextTick 2'); //2
