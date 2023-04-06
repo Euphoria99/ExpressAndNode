@@ -11,5 +11,8 @@
     "euphoria"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "upper-case": "^2.0.2"
+  }
 }
